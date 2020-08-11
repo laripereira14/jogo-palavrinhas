@@ -11,13 +11,18 @@
 
 html {
     font-size: 62.5%; 
-    overflow: hidden;
+    
 }
 
 body {
     background-image: linear-gradient(to right, #8d2de231, #4b00e02a), url('./assets/bg-2x.png');
     font-family: 'Montserrat', sans-serif;
     color: #333333;
+    overflow: hidden;
+
+    @media (min-width: 1022px) {
+        background-image: linear-gradient(to right, #8d2de231, #4b00e02a), url('./assets/bg-1x.png');
+    }
 }
 
 // LAYOUT 
@@ -27,6 +32,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;  
+
+    @media (min-width: 1022px) {
+        width: 100vw;
+        height: 100vh;
+    }
+
 }
 
 .container {
@@ -42,7 +53,12 @@ body {
     border-radius: 15px;
     box-shadow: 0 1.5rem 4rem rgba(#14053d, 0.2), 
                 0 1.5rem 4rem rgba(#8769e4,.2);
-   
+
+    @media (min-width: 1022px) {
+      width: 80%;
+      height: 80%;
+      top: 0;
+    }
 }
 
 .home {
@@ -59,6 +75,12 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    @media (min-width: 1022px) {
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
 .word-img_container {
@@ -67,11 +89,24 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: 1022px) {
+        position: relative;
+        top: 3%;
+    }
 }
 
 .img { 
     max-width: 80%;
     height: auto;
+
+    @media (min-width: 660px) and (max-width: 960px) {
+        max-width: 65%;
+    }
+
+    @media (min-width: 1022px) {
+        max-width: 60%;
+    }
 }
 
 .droppable-container {
@@ -87,6 +122,12 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 3%;
+
+    @media (min-width: 1022px) {
+        order: 1;
+        position: relative;
+        left: 1%;
+    }
    
 }
 
@@ -101,11 +142,24 @@ body {
 .logo {
     max-width: 120%;
     height: auto;
+
+    @media (min-width: 658px) and (max-width: 960px) {
+        width: 90%;
+    }
+
+    @media (min-width: 1022px) {
+        max-width: 70%;
+    }
+    
 }
 
 .letrinhas {
     max-width: 120%;
     height: auto;
+
+    @media (min-width: 1022px) {
+        max-width: 50%;
+    }
 }
 
 // UI 
@@ -139,6 +193,11 @@ body {
     font-size: 1.6rem; 
     font-weight: 700;
     border-radius: 10rem;
+
+    @media (min-width: 658px) and (max-width: 960px) {
+        font-size: 2rem; 
+        padding: 1.5rem 3rem;
+    }
 }
 
 .card {
@@ -154,9 +213,21 @@ body {
     text-transform: uppercase;
     box-shadow: 0 1.5rem 3rem rgba(83, 83, 83, 0.2); 
     margin: 1rem .2rem;
+
+    @media (min-width: 658px) and (max-width: 960px) {
+        width: 8rem;
+        height: 8rem;
+        font-size: 3rem;
+        margin: 1rem 1.3rem;
+    }
+
+    @media (min-width: 1022px) {
+        width: 7rem;
+        height: 7rem;
+        margin: 1rem 1.5rem;
+    }
+    
 }
-
-
 
 // TYPOGRAPH
 
@@ -164,14 +235,22 @@ body {
     font-size: 2.3rem;
     text-align: center;
     margin: 1rem 0;
+
+    @media (min-width: 658px) and (max-width: 960px) {
+        font-size: 3rem;
+    }
 }
 
 .text {
     font-size: 1.7rem;
     text-align: center;
     margin: 1rem 0;
-}
 
+    @media (min-width: 658px) and (max-width: 960px) {
+        font-size: 2rem;
+        margin: 2rem 0 1rem;
+    }
+}
 
 
 // ANIMATIONS

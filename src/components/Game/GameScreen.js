@@ -8,8 +8,10 @@ import WordImage from "./WordImage";
 class GameScreen extends Component {
   state = {
     draggedLetters: "",
+    score: 0,
     banner: {show: false, type: ''}
   };
+
 
   handleDrop = (ev) => {
     // 1. Make elements disappear when dropped
@@ -25,10 +27,8 @@ class GameScreen extends Component {
     });
     /// 3. After all the cards are filled, check if the word formed is equal to the current word
     if(this.state.draggedLetters.length === this.props.current.word.length) {
-      let score = 0;
       if(this.props.current.word === this.state.draggedLetters) {
-        this.setState({banner: {show: true, type: 'success'}});
-        score = 1;
+        this.setState({banner: {show: true, type: 'success'}, score: this.state.score + 1});
       } else {
         this.setState({banner: {show: true, type: 'failed'}});
       }
@@ -37,7 +37,7 @@ class GameScreen extends Component {
           {draggedLetters: "",
           banner: {show: false, type: ''}
         }) 
-        this.props.nextRound(score)}, 
+        this.props.nextRound(this.state.score)}, 
         3000
       );
     } 

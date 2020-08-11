@@ -8,7 +8,7 @@ const Banner = (props) => {
             <h2 className="title"> {props.type === "success" ? "Você acertou!" : "Você errou!" }</h2>    
             <img src={require(`../../assets/letrinhas-${props.type}.png`)} alt={`letrinhas-${props.type}`} className="letrinhas"/> 
             <p className="text"> A palavra é: </p>
-            <div className="droppable-container"> {[...props.word].map(cur => <Card> {cur} </Card>)} </div>
+            <div className="droppable-container"> {React.Children.toArray([...props.word].map(cur => <Card> {cur} </Card>))} </div>
         </div>
     )
 }
